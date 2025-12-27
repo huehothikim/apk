@@ -1,0 +1,5 @@
+// Top-level settings file for the MeoMayBeOptimizer project.
+// This file declares the project name and includes the app module.
+
+rootProject.name = "MeoMayBeOptimizer"
+include(":app")

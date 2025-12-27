@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cthinhdzs1tg.meomaybeooptimizer">
+
+    <!-- Declare Shizuku runtime permission as recommended by the official guide 【758173155661803†L210-L218】 -->
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <!-- The application tag defines the provider required by Shizuku, along with our activities -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MeoMayBe Optimizer"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MeoMayBeOptimizer">
+        
+        <!-- Shizuku provider declaration. This must be exported to allow the Shizuku process to access it 【758173155661803†L159-L166】 -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:multiprocess="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MeoMayBeOptimizer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Optional separate activity for the Resolution Changer screen. Compose navigation can instead use a single activity. -->
+    </application>
+
+</manifest>
